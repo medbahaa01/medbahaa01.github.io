@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مخطط المهام الذكي ✨</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <style>
+        :root {
+            --main-color: #4facfe;
+            --secondary-color: #00f2fe;
+            --success-color: #2ecc71;
+            --danger-color: #ff5e5e;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --glass: rgba(255, 255, 255, 0.85);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .app-card {
+            width: 100%;
+            max-width: 450px;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .stats-container {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 18px;
+            margin-bottom: 25px;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 12px;
+        }
+
+        .stat-value { font-weight: bold; font-size: 1.3rem; color: var(--main-color); }
+        .stat-label { font-size: 0.75rem; color: #777; }
+
+        .progress-bar-wrap {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, var(--main-color), var(--secondary-color));
+            transition: width 0.6s ease;
+        }
+
+        .input-box {
+            display: flex;
+            background: #fff;
+            padding: 6px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            gap: 5px;
+        }
+
+        input {
+            flex: 1;
+            border: none;
+            padding: 12px;
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        .add-btn {
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 14px;
+            font-weight: bold;
+        }
+
+        ul { list-style: none; padding: 0; }
+
+        li {
+            background: white;
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+
+        .task-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            cursor: pointer;
+            text-align: right;
+        }
+
+        .task-emoji { font-size: 1.2rem; }
+
+        li.completed .task-text {
+            text-decoration: line-through;
+            color: #bbb;
+        }
+
+        .delete-btn {
+            background: none;
+            border: none;
+            color: var(--danger-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* نافذة التهنئة */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(6px);
+            z-index: 999;
+        }
+
+        #congrats-modal {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            z-index: 1000;
+            text-align: center;
+            width: 80%;
+        }
+
+        .close-modal-btn {
+            margin-top: 20px;
+            background: var(--main-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-card">
+    <h1 style="color:var(--main-color)">✨قائمة مهامي✨</h1>
+
+    <div class="stats-container">
+        <div class="stats-grid">
+            <div class="stat-item"><span class="stat-value" id="total-tasks">0</span><div class="stat-label">المهام</div></div>
+            <div class="stat-item"><span class="stat-value" id="percent-val">0%</span><div class="stat-label">الإنجاز</div></div>
+            <div class="stat-item"><span class="stat-value" id="done-tasks">0</span><div class="stat-label">المكتملة</div></div>
+        </div>
+        <div class="progress-bar-wrap"><div id="progress-fill"></div></div>
+    </div>
+
+    <div class="input-box">
+        <input type="text" id="todo-input" placeholder="مثلاً: سباحة، دراسة، نوم...">
+        <button class="add-btn" onclick="addTask()">إضافة</button>
+    </div>
+
+    <ul id="todo-list"></ul>
+</div>
+
+<div class="modal-overlay" id="modal-overlay"></div>
+<div id="congrats-modal">
+    <div style="font-size: 3rem;">🏆</div>
+    <h2>مذهل!</h2>
+    <p>لقد أنجزت كل شيء اليوم، أنت بطل!</p>
+    <button class="close-modal-btn" onclick="closeModal()">استمرار</button>
+</div>
+
+<script>
+    let tasks = JSON.parse(localStorage.getItem('smartTasks')) || [];
+
+    // قاموس الكلمات الدليلية للإيموجي
+    const emojiMap = {
+        'سباحة': '🏊', 'رسم': '🎨', 'دراسة': '📚', 'مذاكرة': '📖',
+        'برمجة': '💻', 'كود': '⌨️', 'رياضة': '🏋️', 'جيم': '💪',
+        'نوم': '😴', 'اكل': '🍕', 'طعام': '🍔', 'صلاة': '🕌',
+        'عمل': '💼', 'شغل': '🏗️', 'قراءة': '📑', 'قهوة': '☕',
+        'لعب': '🎮', 'كورة': '⚽', 'مشي': '🚶', 'جري': '🏃'
+    };
+
+    function getEmoji(text) {
+        for (let key in emojiMap) {
+            if (text.includes(key)) return emojiMap[key];
+        }
+        return '📌'; // إيموجي افتراضي إذا لم يجد كلمة مطابقة
+    }
+
+    function renderApp() {
+        const list = document.getElementById('todo-list');
+        list.innerHTML = '';
+        tasks.forEach((task, index) => {
+            const li = document.createElement('li');
+            if(task.completed) li.className = 'completed';
+            li.innerHTML = `
+                <div class="task-content" onclick="toggleTask(${index})">
+                    <span class="task-emoji">${task.emoji}</span>
+                    <span class="task-text">${task.text}</span>
+                </div>
+                <button class="delete-btn" onclick="deleteTask(${index})">🗑️</button>
+            `;
+            list.appendChild(li);
+        });
+        updateStats();
+        localStorage.setItem('smartTasks', JSON.stringify(tasks));
+    }
+
+    function addTask() {
+        const input = document.getElementById('todo-input');
+        const text = input.value.trim();
+        if(text === '') return;
+        
+        const emoji = getEmoji(text);
+        tasks.push({ text: text, emoji: emoji, completed: false });
+        input.value = '';
+        renderApp();
+    }
+
+    function deleteTask(index) {
+        tasks.splice(index, 1);
+        renderApp();
+    }
+
+    function toggleTask(index) {
+        tasks[index].completed = !tasks[index].completed;
+        renderApp();
+    }
+
+    function updateStats() {
+        const total = tasks.length;
+        const completed = tasks.filter(t => t.completed).length;
+        const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
+        document.getElementById('total-tasks').innerText = total;
+        document.getElementById('done-tasks').innerText = completed;
+        document.getElementById('percent-val').innerText = percent + '%';
+        document.getElementById('progress-fill').style.width = percent + '%';
+
+        if (total > 0 && completed === total) setTimeout(showCelebration, 600);
+    }
+
+    function showCelebration() {
+        confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+        document.getElementById('congrats-modal').style.display = 'block';
+        document.getElementById('modal-overlay').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('congrats-modal').style.display = 'none';
+        document.getElementById('modal-overlay').style.display = 'none';
+    }
+
+    document.getElementById('todo-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') addTask();
+    });
+
+    renderApp();
+</script>
+
+</body>
+  </html>
+  
