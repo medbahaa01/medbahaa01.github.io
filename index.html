@@ -8,12 +8,10 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
   <style>
-    /* 1. التنسيقات الأساسية */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 60px; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0a0a0a; color: white; overflow-x: hidden; }
 
-    /* 2. القائمة العلويّة (Navigation) */
     nav {
       position: fixed; top: 0; width: 100%;
       background-color: #111; padding: 15px;
@@ -24,7 +22,6 @@
     nav a { color: #aaa; text-decoration: none; font-size: 15px; transition: 0.3s; }
     nav a.active { color: #00d4ff; font-weight: bold; }
 
-    /* 3. القسم الرئيسي (Hero Section) */
     #home {
       height: 100vh; display: flex; flex-direction: column;
       justify-content: center; align-items: center; text-align: center;
@@ -34,7 +31,6 @@
     #home h1 { font-size: 42px; color: #00d4ff; margin-bottom: 15px; }
     #home p { font-size: 20px; color: #aaa; min-height: 30px; margin-bottom: 30px; }
 
-    /* 4. الأقسام العامة والتأثيرات */
     section { padding: 80px 20px; text-align: center; }
     .section-hidden { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
     .section-visible { opacity: 1; transform: translateY(0); }
@@ -42,16 +38,14 @@
     #about { background-color: #111; }
     #about p { font-size: 17px; color: #aaa; max-width: 600px; margin: auto; line-height: 1.8; }
 
-    /* 5. مهارات التقدم (Skill Bars) */
     .skills-bars { max-width: 600px; margin: auto; }
     .skill-bar { margin-bottom: 25px; text-align: right; }
     .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; color: #00d4ff; }
     .bar { background-color: #333; border-radius: 10px; height: 10px; }
     .fill { background-color: #00d4ff; height: 10px; border-radius: 10px; width: 0; transition: width 2s ease; }
 
-    /* 6. معرض المشاريع (Portfolio Grid) */
     #portfolio { background-color: #111; }
-    .projects-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; max-width: 900px; margin: auto; }
+    .projects-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; max-width: 1100px; margin: auto; }
     .project {
       background-color: #1a1a2e; padding: 25px; border-radius: 15px;
       width: 300px; border: 1px solid #333; transition: 0.3s;
@@ -60,7 +54,6 @@
     .project h3 { color: #00d4ff; margin-bottom: 10px; }
     .project p { color: #aaa; font-size: 14px; margin-bottom: 15px; }
 
-    /* 7. الأزرار والعناصر التفاعلية */
     .btn {
       display: inline-block; padding: 10px 25px; background-color: #00d4ff;
       color: black; border-radius: 25px; text-decoration: none; font-weight: bold; transition: 0.3s;
@@ -73,23 +66,19 @@
     }
     #langBtn:hover { background: #00d4ff; color: #000; }
 
-    /* 8. نموذج التواصل */
     form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
     form input, form textarea { padding: 12px; border-radius: 8px; border: 1px solid #333; background: #111; color: white; outline: none; }
     form input:focus, form textarea:focus { border-color: #00d4ff; }
     form button { padding: 12px; background: #00d4ff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
     form button:hover { background: #0088cc; }
 
-    /* 9. التذييل (Footer) */
     footer { padding: 40px; background: #0b0b0b; color: #777; font-size: 14px; border-top: 1px solid #222; }
     
-    /* زر الصعود للأعلى */
     #scrollTop {
       position: fixed; bottom: 30px; left: 20px; width: 45px; height: 45px;
       background: #00d4ff; border: none; border-radius: 50%; display: none; z-index: 999; cursor: pointer;
     }
 
-    /* انيميشن أيقونة الماوس */
     .scroll-down { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); }
     .mouse { width: 25px; height: 40px; border: 2px solid #00d4ff; border-radius: 15px; display: flex; justify-content: center; padding-top: 5px; }
     .wheel { width: 4px; height: 8px; background: #00d4ff; border-radius: 2px; animation: scroll 1.5s infinite; }
@@ -144,16 +133,25 @@
   <section id="portfolio" class="section-hidden">
     <h2 data-i18n="portfolioTitle">مشاريع معرض الأعمال</h2>
     <div class="projects-grid">
+
       <div class="project">
         <h3 data-i18n="store">متجر NOIR</h3>
         <p data-i18n="storeDesc">متجر ملابس احترافي بتصميم داكن أنيق</p>
         <a href="store.html" class="btn" data-i18n="viewProject">عرض المشروع</a>
       </div>
+
       <div class="project">
         <h3 data-i18n="todo">قائمة المهام</h3>
         <p data-i18n="todoDesc">تطبيق لإدارة المهام اليومية</p>
         <a href="todo.html" class="btn" data-i18n="viewProject">عرض المشروع</a>
       </div>
+
+      <div class="project">
+        <h3 data-i18n="restaurant">♛ مطعم التاج الذهبي</h3>
+        <p data-i18n="restaurantDesc">موقع مطعم فاخر مع نظام حجز طاولات وقائمة طعام احترافية ثنائية اللغة</p>
+        <a href="https://medbahaa01.github.io/restaurant-altaj/" class="btn" data-i18n="viewProject">عرض المشروع</a>
+      </div>
+
     </div>
   </section>
 
@@ -171,46 +169,56 @@
   <footer>
     <p>© 2026 med bahaa - جميع الحقوق محفوظة</p>
     <div style="margin-top: 15px;">
-        <a href="https://wa.me/213659861168" target="_blank" style="color: #25D366; text-decoration:none;">📱 واتساب</a> | 
-        <a href="https://t.me/Med_the_programmer" target="_blank" style="color: #0088cc; text-decoration:none;">✈️ تيليغرام</a>
+      <a href="https://wa.me/213659861168" target="_blank" style="color: #25D366; text-decoration:none;">📱 واتساب</a> | 
+      <a href="https://t.me/Med_the_programmer" target="_blank" style="color: #0088cc; text-decoration:none;">✈️ تيليغرام</a>
     </div>
   </footer>
 
   <button id="scrollTop">↑</button>
 
   <script>
-    // 1. نظام الترجمة (Arabic & English)
     let isArabic = true;
     const translations = {
       ar: {
-        home: "الرئيسية", about: "من أنا", skills: "مهاراتي", 
+        home: "الرئيسية", about: "من أنا", skills: "مهاراتي",
         portfolio: "مشاريع معرض الأعمال", contact: "تواصل",
         heroTitle: "مرحباً! أنا med bahaa", heroBtn: "تواصل معي",
-        aboutTitle: "من أنا؟", aboutText: "أنا med bahaa، مطور ويب شغوف بالبرمجة وبناء المواقع الاحترافية.",
-        skillsTitle: "مهاراتي", portfolioTitle: "مشاريع معرض الأعمال",
+        aboutTitle: "من أنا؟",
+        aboutText: "أنا med bahaa، مطور ويب شغوف بالبرمجة وبناء المواقع الاحترافية.",
+        skillsTitle: "مهاراتي",
+        portfolioTitle: "مشاريع معرض الأعمال",
         contactTitle: "تواصل معي", contactSub: "هل لديك مشروع؟ تواصل معي الآن!",
-        send: "إرسال", viewProject: "عرض المشروع", store: "متجر NOIR",
-        storeDesc: "متجر ملابس احترافي بتصميم داكن أنيق", todo: "قائمة المهام",
-        todoDesc: "تطبيق لإدارة المهام اليومية", namePlaceholder: "اسمك",
-        emailPlaceholder: "بريدك الإلكتروني", msgPlaceholder: "رسالتك...",
+        send: "إرسال", viewProject: "عرض المشروع",
+        store: "متجر NOIR", storeDesc: "متجر ملابس احترافي بتصميم داكن أنيق",
+        todo: "قائمة المهام", todoDesc: "تطبيق لإدارة المهام اليومية",
+        restaurant: "♛ مطعم التاج الذهبي",
+        restaurantDesc: "موقع مطعم فاخر مع نظام حجز طاولات وقائمة طعام احترافية ثنائية اللغة",
+        namePlaceholder: "اسمك",
+        emailPlaceholder: "بريدك الإلكتروني",
+        msgPlaceholder: "رسالتك...",
         typingTexts: ["مطور ويب محترف 💻", "أبني مواقع احترافية 🌐", "أحول أفكارك لواقع ✨"]
       },
       en: {
-        home: "Home", about: "About", skills: "Skills", 
-        portfolio: "Portfolio Exhibition Projects", contact: "Contact",
+        home: "Home", about: "About", skills: "Skills",
+        portfolio: "Portfolio", contact: "Contact",
         heroTitle: "Hi! I'm med bahaa", heroBtn: "Contact Me",
-        aboutTitle: "About Me", aboutText: "I'm med bahaa, a passionate web developer building professional sites.",
-        skillsTitle: "My Skills", portfolioTitle: "Portfolio Exhibition Projects",
+        aboutTitle: "About Me",
+        aboutText: "I'm med bahaa, a passionate web developer building professional sites.",
+        skillsTitle: "My Skills",
+        portfolioTitle: "Portfolio",
         contactTitle: "Contact Me", contactSub: "Have a project? Let's work!",
-        send: "Send", viewProject: "View Project", store: "NOIR Store",
-        storeDesc: "Elegant dark fashion store design", todo: "Todo App",
-        todoDesc: "Daily task management app", namePlaceholder: "Your Name",
-        emailPlaceholder: "Your Email", msgPlaceholder: "Your Message...",
+        send: "Send", viewProject: "View Project",
+        store: "NOIR Store", storeDesc: "Elegant dark fashion store design",
+        todo: "Todo App", todoDesc: "Daily task management app",
+        restaurant: "♛ Al Taj Al Thahabi Restaurant",
+        restaurantDesc: "Luxury restaurant website with table booking system and bilingual menu",
+        namePlaceholder: "Your Name",
+        emailPlaceholder: "Your Email",
+        msgPlaceholder: "Your Message...",
         typingTexts: ["Pro Web Developer 💻", "Building Amazing Sites 🌐", "Ideas to Reality ✨"]
       }
     };
 
-    // 2. دالة تبديل اللغة
     function toggleLang() {
       isArabic = !isArabic;
       const lang = isArabic ? 'ar' : 'en';
@@ -233,7 +241,6 @@
       textIndex = 0; charIndex = 0;
     }
 
-    // 3. تأثير آلة الكتابة
     let currentTexts = translations.ar.typingTexts;
     let textIndex = 0, charIndex = 0, isDeleting = false;
 
@@ -242,7 +249,9 @@
       const speed = isDeleting ? 50 : 100;
       const displayTarget = document.getElementById("typing");
 
-      displayTarget.textContent = isDeleting ? current.substring(0, charIndex--) : current.substring(0, charIndex++);
+      displayTarget.textContent = isDeleting
+        ? current.substring(0, charIndex--)
+        : current.substring(0, charIndex++);
 
       if (!isDeleting && charIndex > current.length) {
         isDeleting = true;
@@ -257,7 +266,6 @@
       }
     }
 
-    // 4. مراقب التمرير (لظهور الأقسام تدريجياً)
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -271,7 +279,6 @@
 
     document.querySelectorAll('section').forEach(s => observer.observe(s));
 
-    // 5. التحكم في القائمة وزر الصعود عند التمرير
     window.onscroll = () => {
       const nav = document.getElementById('navbar');
       const scrollBtn = document.getElementById('scrollTop');
@@ -299,9 +306,7 @@
 
     document.getElementById('scrollTop').onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // تشغيل التأثيرات الأولية
     typeEffect();
   </script>
 </body>
-    </html>
-  
+</html>
