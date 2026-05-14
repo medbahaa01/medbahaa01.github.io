@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al Taj Al Thahabi | التاج الذهبي</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ========== SPLASH ========== -->
+<div id="splash">
+  <div class="splash-bg"></div>
+  <div class="splash-overlay"></div>
+  <button class="lang-toggle" id="splashLangBtn" onclick="toggleLang()">EN</button>
+
+  <div class="splash-content">
+    <div class="ornament top-ornament">❧</div>
+
+    <div class="brand-box">
+      <p class="brand-sub"
+         data-ar="بيت الضيافة الملكية"
+         data-en="Royal Hospitality Since 1998">
+        بيت الضيافة الملكية
+      </p>
+      <div class="brand-name-wrap">
+        <span class="brand-line"></span>
+        <h1 class="brand-ar">التاج الذهبي</h1>
+        <span class="brand-line"></span>
+      </div>
+      <p class="brand-en-name">Al Taj Al Thahabi</p>
+    </div>
+
+    <div class="stars-row">
+      <span>✦</span><span>★</span><span>★</span>
+      <span>★</span><span>★</span><span>★</span><span>✦</span>
+    </div>
+
+    <div class="gold-divider">
+      <span class="div-line"></span>
+      <span class="div-icon">♛</span>
+      <span class="div-line"></span>
+    </div>
+
+    <p class="splash-quote"
+       data-ar='"حيث يتحوّل العشاء إلى ذكرى، والذكرى إلى شغف"'
+       data-en='"Where Dinner Becomes Memory, and Memory Becomes Passion"'>
+      "حيث يتحوّل العشاء إلى ذكرى، والذكرى إلى شغف"
+    </p>
+
+    <div class="ornament bottom-ornament">✦</div>
+
+    <button class="enter-btn" id="enterBtn">
+      <span data-ar="تفضل بالدخول" data-en="Enter & Welcome">تفضل بالدخول</span>
+      <span class="enter-arrow">←</span>
+    </button>
+
+    <p class="scroll-hint"
+       data-ar="تجربة طعام لا مثيل لها تنتظرك"
+       data-en="An unmatched dining experience awaits">
+      تجربة طعام لا مثيل لها تنتظرك
+    </p>
+  </div>
+</div>
+
+<!-- ========== MAIN SITE ========== -->
+<div id="mainSite" class="hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-ar">التاج الذهبي</span>
+        <span class="logo-en">Al Taj Al Thahabi</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero"        data-ar="الرئيسية"  data-en="Home">الرئيسية</a></li>
+        <li><a href="#menu-page"   data-ar="القائمة"   data-en="Menu">القائمة</a></li>
+        <li><a href="#reservation" data-ar="حجز طاولة" data-en="Reserve">حجز طاولة</a></li>
+        <li><a href="#contact"     data-ar="تواصل"     data-en="Contact">تواصل</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-lang" onclick="toggleLang()" id="navLangBtn">EN</button>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="#hero"        data-ar="الرئيسية"  data-en="Home">الرئيسية</a></li>
+      <li><a href="#menu-page"   data-ar="القائمة"   data-en="Menu">القائمة</a></li>
+      <li><a href="#reservation" data-ar="حجز طاولة" data-en="Reserve">حجز طاولة</a></li>
+      <li><a href="#contact"     data-ar="تواصل"     data-en="Contact">تواصل</a></li>
+      <li>
+        <button class="mobile-lang" onclick="toggleLang()" id="mobileLangBtn">EN</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-sub" data-ar="مرحباً بكم في" data-en="Welcome to">مرحباً بكم في</p>
+      <h1 class="hero-title">التاج الذهبي</h1>
+      <p class="hero-en-title">Al Taj Al Thahabi</p>
+      <p class="hero-desc"
+         data-ar="تجربة طعام ملكية تجمع أصالة المطبخ الشرقي بأناقة العصر الحديث"
+         data-en="A royal dining experience blending Eastern authenticity with modern elegance">
+        تجربة طعام ملكية تجمع أصالة المطبخ الشرقي بأناقة العصر الحديث
+      </p>
+      <div class="hero-quotes">
+        <div class="hero-quote-item">
+          <span class="quote-icon">✦</span>
+          <p data-ar="نحن لا نقدم طعاماً، نحن نصنع ذكريات"
+             data-en="We don't serve food, we create memories">
+            نحن لا نقدم طعاماً، نحن نصنع ذكريات
+          </p>
+        </div>
+        <div class="quote-divider">◆</div>
+        <div class="hero-quote-item">
+          <span class="quote-icon">✦</span>
+          <p data-ar="كل طبق حكاية، وكل زيارة تجربة فريدة"
+             data-en="Every dish a story, every visit a unique experience">
+            كل طبق حكاية، وكل زيارة تجربة فريدة
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- النادلان -->
+    <div class="waiters-section">
+
+      <!-- النادل الأول - الطعام -->
+      <div class="waiter-wrap">
+        <div class="waiter-popup" id="popup-food">
+          <div class="popup-header">
+            <span data-ar="تفضل بالاختيار 🍽️" data-en="Please choose 🍽️">تفضل بالاختيار 🍽️</span>
+          </div>
+          <a href="#" class="popup-option" data-tab="main">
+            <span class="opt-icon">🥩</span>
+            <div>
+              <p data-ar="الأطباق الرئيسية" data-en="Main Dishes">الأطباق الرئيسية</p>
+              <small data-ar="أشهى المأكولات الفاخرة" data-en="Finest gourmet dishes">أشهى المأكولات الفاخرة</small>
+            </div>
+            <span class="opt-arrow">←</span>
+          </a>
+          <a href="#" class="popup-option" data-tab="dessert">
+            <span class="opt-icon">🍮</span>
+            <div>
+              <p data-ar="التحليات" data-en="Desserts">التحليات</p>
+              <small data-ar="حلويات راقية لا تُنسى" data-en="Elegant desserts">حلويات راقية لا تُنسى</small>
+            </div>
+            <span class="opt-arrow">←</span>
+          </a>
+          <a href="#" class="popup-option" data-tab="drinks">
+            <span class="opt-icon">🥂</span>
+            <div>
+              <p data-ar="المشروبات" data-en="Beverages">المشروبات</p>
+              <small data-ar="مشروبات فاخرة مختارة" data-en="Selected fine beverages">مشروبات فاخرة مختارة</small>
+            </div>
+            <span class="opt-arrow">←</span>
+          </a>
+        </div>
+
+        <div class="waiter-card" id="waiter-food">
+          <div class="waiter-emoji-wrap">
+            <div class="waiter-emoji">🤵</div>
+            <div class="notebook">📒</div>
+          </div>
+          <div class="waiter-label-box">
+            <span class="waiter-label" data-ar="قائمة الطعام" data-en="Food Menu">قائمة الطعام</span>
+            <span class="waiter-tap" data-ar="✦ اضغط لفتح الدفتر ✦" data-en="✦ Tap to open ✦">✦ اضغط لفتح الدفتر ✦</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- الفاصل -->
+      <div class="waiters-divider">
+        <span class="div-line"></span>
+        <span>♛</span>
+        <span class="div-line"></span>
+      </div>
+
+      <!-- النادلة الثانية - الحجز والتواصل -->
+      <div class="waiter-wrap">
+        <div class="waiter-popup" id="popup-service">
+          <div class="popup-header">
+            <span data-ar="كيف أخدمك؟ 🤵🏼‍♀️" data-en="How can I help? 🤵🏼‍♀️">كيف أخدمك؟ 🤵🏼‍♀️</span>
+          </div>
+          <a href="#reservation" class="popup-option">
+            <span class="opt-icon">🪑</span>
+            <div>
+              <p data-ar="حجز طاولة" data-en="Reserve a Table">حجز طاولة</p>
+              <small data-ar="اختر طاولتك المفضلة" data-en="Choose your table">اختر طاولتك المفضلة</small>
+            </div>
+            <span class="opt-arrow">←</span>
+          </a>
+          <a href="#contact" class="popup-option">
+            <span class="opt-icon">📞</span>
+            <div>
+              <p data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</p>
+              <small data-ar="نحن هنا لخدمتكم دائماً" data-en="We're always here">نحن هنا لخدمتكم دائماً</small>
+            </div>
+            <span class="opt-arrow">←</span>
+          </a>
+        </div>
+
+        <div class="waiter-card" id="waiter-service">
+          <div class="waiter-emoji-wrap">
+            <div class="waiter-emoji">🤵🏼‍♀️</div>
+            <div class="notebook">📋</div>
+          </div>
+          <div class="waiter-label-box">
+            <span class="waiter-label" data-ar="الحجز والتواصل" data-en="Booking & Contact">الحجز والتواصل</span>
+            <span class="waiter-tap" data-ar="✦ اضغط لفتح الدفتر ✦" data-en="✦ Tap to open ✦">✦ اضغط لفتح الدفتر ✦</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <p class="footer-ar">التاج الذهبي</p>
+        <p class="footer-en">Al Taj Al Thahabi</p>
+      </div>
+      <div class="gold-divider">
+        <span class="div-line"></span>
+        <span class="div-icon">♛</span>
+        <span class="div-line"></span>
+      </div>
+      <p class="footer-copy">© 2025 التاج الذهبي — جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <!-- ========== MENU PAGE ========== -->
+  <div id="menu-page" class="hidden">
+    <div class="menu-bg"></div>
+    <div class="menu-overlay"></div>
+    <button class="back-btn" id="backFromMenu">
+      <span>→</span>
+      <span data-ar="رجوع" data-en="Back">رجوع</span>
+    </button>
+
+    <div class="menu-container">
+      <div class="menu-header">
+        <p class="menu-label">✦ تشكيلتنا الفاخرة ✦</p>
+        <h2 class="menu-title" data-ar="قائمة الطعام" data-en="Our Menu">قائمة الطعام</h2>
+        <div class="gold-divider">
+          <span class="div-line"></span>
+          <span class="div-icon">♛</span>
+          <span class="div-line"></span>
+        </div>
+        <p class="menu-sub"
+           data-ar="أجود المأكولات من أرقى المطابخ العالمية"
+           data-en="Finest cuisine from the world's top kitchens">
+          أجود المأكولات من أرقى المطابخ العالمية
+        </p>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-tab="main">
+          <span>🍽️</span>
+          <span data-ar="الأطباق الرئيسية" data-en="Main Dishes">الأطباق الرئيسية</span>
+        </button>
+        <button class="menu-tab" data-tab="dessert">
+          <span>🍮</span>
+          <span data-ar="التحليات" data-en="Desserts">التحليات</span>
+        </button>
+        <button class="menu-tab" data-tab="drinks">
+          <span>🥂</span>
+          <span data-ar="المشروبات" data-en="Beverages">المشروبات</span>
+        </button>
+      </div>
+
+      <!-- الأطباق الرئيسية -->
+      <div class="menu-content active" id="tab-main">
+        <div class="dishes-grid">
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="ستيك">
+              <span class="dish-badge" data-ar="الأكثر طلباً" data-en="Best Seller">الأكثر طلباً</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="ستيك ريب آي الفاخر" data-en="Premium Ribeye Steak">ستيك ريب آي الفاخر</h3>
+              <p data-ar="لحم بقري مشوي على الفحم مع صلصة الفلفل الأسود والزبدة المعطرة"
+                 data-en="Charcoal grilled beef with black pepper sauce and herb butter">
+                لحم بقري مشوي على الفحم مع صلصة الفلفل الأسود والزبدة المعطرة
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$38</span>
+                <span class="dish-rating">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80" alt="دجاج">
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="دجاج محمر بالزعفران" data-en="Saffron Roasted Chicken">دجاج محمر بالزعفران</h3>
+              <p data-ar="دجاج كامل محمر بالزعفران الإيراني والتوابل الشرقية مع الأرز البسمتي"
+                 data-en="Whole chicken roasted with Iranian saffron and oriental spices">
+                دجاج كامل محمر بالزعفران الإيراني والتوابل الشرقية مع الأرز البسمتي
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$28</span>
+                <span class="dish-rating">★ 4.8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1559742811-822873691df8?w=600&q=80" alt="سلمون">
+              <span class="dish-badge" data-ar="تخصص الشيف" data-en="Chef's Special">تخصص الشيف</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="سلمون مشوي بالأعشاب" data-en="Herb Grilled Salmon">سلمون مشوي بالأعشاب</h3>
+              <p data-ar="فيليه سلمون طازج مشوي مع صلصة الليمون والأعشاب البحرية"
+                 data-en="Fresh salmon fillet grilled with lemon sauce and sea herbs">
+                فيليه سلمون طازج مشوي مع صلصة الليمون والأعشاب البحرية
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$42</span>
+                <span class="dish-rating">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80" alt="كباب">
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="كباب الضأن الملكي" data-en="Royal Lamb Kebab">كباب الضأن الملكي</h3>
+              <p data-ar="كباب لحم ضأن أصيل متبل بتوابل سرية مع صلصة الرمان"
+                 data-en="Authentic lamb kebab marinated with secret spices with pomegranate sauce">
+                كباب لحم ضأن أصيل متبل بتوابل سرية مع صلصة الرمان
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$32</span>
+                <span class="dish-rating">★ 4.7</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80" alt="جمبري">
+              <span class="dish-badge" data-ar="جديد" data-en="New">جديد</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="جمبري ملكي بالثوم" data-en="Royal Garlic Shrimp">جمبري ملكي بالثوم</h3>
+              <p data-ar="جمبري طازج كبير مقلي بالزبدة والثوم مع صلصة الليمون"
+                 data-en="Large fresh shrimp sautéed in butter and garlic with lemon sauce">
+                جمبري طازج كبير مقلي بالزبدة والثوم مع صلصة الليمون
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$45</span>
+                <span class="dish-rating">★ 4.8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&q=80" alt="باستا">
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="باستا الكريمة الإيطالية" data-en="Italian Cream Pasta">باستا الكريمة الإيطالية</h3>
+              <p data-ar="باستا طازجة مع صلصة الكريمة البيضاء والفطر البري وجبن البارميزان"
+                 data-en="Fresh pasta with white cream sauce, wild mushrooms and parmesan">
+                باستا طازجة مع صلصة الكريمة البيضاء والفطر البري وجبن البارميزان
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$24</span>
+                <span class="dish-rating">★ 4.6</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&q=80" alt="برغر">
+              <span class="dish-badge" data-ar="تخصص الشيف" data-en="Chef's Special">تخصص الشيف</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="برغر الواغيو الياباني" data-en="Japanese Wagyu Burger">برغر الواغيو الياباني</h3>
+              <p data-ar="لحم واغيو ياباني فاخر مع جبن التريفل والخس الكريستالي"
+                 data-en="Premium Japanese wagyu with truffle cheese and crystal lettuce">
+                لحم واغيو ياباني فاخر مع جبن التريفل والخس الكريستالي
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$55</span>
+                <span class="dish-rating">★ 5.0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&q=80" alt="أرز">
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="أرز الكابسة الملكية" data-en="Royal Kabsa Rice">أرز الكابسة الملكية</h3>
+              <p data-ar="أرز بسمتي مع لحم الغنم المتبل والمكسرات والزبيب الذهبي"
+                 data-en="Long grain basmati with spiced lamb, nuts and golden raisins">
+                أرز بسمتي مع لحم الغنم المتبل والمكسرات والزبيب الذهبي
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$30</span>
+                <span class="dish-rating">★ 4.7</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- التحليات -->
+      <div class="menu-content" id="tab-dessert">
+        <div class="dishes-grid">
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" alt="كيكة">
+              <span class="dish-badge" data-ar="الأكثر طلباً" data-en="Best Seller">الأكثر طلباً</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="كيكة الشوكولاتة البلجيكية" data-en="Belgian Chocolate Cake">كيكة الشوكولاتة البلجيكية</h3>
+              <p data-ar="كيكة شوكولاتة داكنة مع كريمة الفانيليا وصلصة الكراميل المملح"
+                 data-en="Dark chocolate cake with vanilla cream and salted caramel">
+                كيكة شوكولاتة داكنة مع كريمة الفانيليا وصلصة الكراميل المملح
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$14</span>
+                <span class="dish-rating">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="كريم برولي">
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="كريم برولي الفرنسي" data-en="French Crème Brûlée">كريم برولي الفرنسي</h3>
+              <p data-ar="حلوى فرنسية كلاسيكية بالكريمة والفانيليا وطبقة السكر المكرمل"
+                 data-en="Classic French dessert with cream, vanilla and caramelized sugar">
+                حلوى فرنسية كلاسيكية بالكريمة والفانيليا وطبقة السكر المكرمل
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$12</span>
+                <span class="dish-rating">★ 4.8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80" alt="تيراميسو">
+              <span class="dish-badge" data-ar="تخصص الشيف" data-en="Chef's Special">تخصص الشيف</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="تيراميسو الإيطالي" data-en="Italian Tiramisu">تيراميسو الإيطالي</h3>
+              <p data-ar="طبقات من الماسكاربوني والبسكويت المنقوع بالإسبرسو الإيطالي"
+                 data-en="Layers of mascarpone and biscuits soaked in Italian espresso">
+                طبقات من الماسكاربوني والبسكويت المنقوع بالإسبرسو الإيطالي
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$13</span>
+                <span class="dish-rating">★ 4.8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80" alt="مولتن">
+              <span class="dish-badge" data-ar="جديد" data-en="New">جديد</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="مولتن شوكولاتة دافئ" data-en="Warm Chocolate Molten">مولتن شوكولاتة دافئ</h3>
+              <p data-ar="كيك شوكولاتة بقلب سائل مع آيس كريم الفانيليا والتوت"
+                 data-en="Chocolate cake with liquid center, vanilla ice cream and berries">
+                كيك شوكولاتة بقلب سائل مع آيس كريم الفانيليا والتوت
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$15</span>
+                <span class="dish-rating">★ 5.0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=600&q=80" alt="بقلاوة">
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="بقلاوة الفستق الملكية" data-en="Royal Pistachio Baklava">بقلاوة الفستق الملكية</h3>
+              <p data-ar="بقلاوة شامية بالفستق الحلبي الطازج والعسل الجبلي والسمن"
+                 data-en="Syrian baklava with fresh pistachio and mountain honey">
+                بقلاوة شامية بالفستق الحلبي الطازج والعسل الجبلي والسمن
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$10</span>
+                <span class="dish-rating">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="كيكة الجزر">
+              <span class="dish-badge" data-ar="تخصص الشيف" data-en="Chef's Special">تخصص الشيف</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="كيكة الجزر بالكريم تشيز" data-en="Carrot Cream Cheese Cake">كيكة الجزر بالكريم تشيز</h3>
+              <p data-ar="كيكة الجزر الرطبة مع كريمة الجبن البيضاء والقرفة والجوز"
+                 data-en="Moist carrot cake with white cream cheese, cinnamon and walnuts">
+                كيكة الجزر الرطبة مع كريمة الجبن البيضاء والقرفة والجوز
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$13</span>
+                <span class="dish-rating">★ 4.6</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- المشروبات -->
+      <div class="menu-content" id="tab-drinks">
+        <div class="dishes-grid">
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="قهوة">
+              <span class="dish-badge" data-ar="الأكثر طلباً" data-en="Best Seller">الأكثر طلباً</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="إسبرسو الشيف الذهبي" data-en="Chef's Golden Espresso">إسبرسو الشيف الذهبي</h3>
+              <p data-ar="حبوب قهوة إثيوبية محمصة يدوياً مع رغوة ذهبية كثيفة"
+                 data-en="Hand-roasted Ethiopian beans with thick golden foam">
+                حبوب قهوة إثيوبية محمصة يدوياً مع رغوة ذهبية كثيفة
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$6</span>
+                <span class="dish-rating">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" alt="كوكتيل">
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="كوكتيل الفواكه الاستوائية" data-en="Tropical Fruit Cocktail">كوكتيل الفواكه الاستوائية</h3>
+              <p data-ar="مزيج من المانجو والأناناس والبرتقال مع ماء جوز الهند"
+                 data-en="Blend of mango, pineapple and orange with coconut water">
+                مزيج من المانجو والأناناس والبرتقال مع ماء جوز الهند
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$9</span>
+                <span class="dish-rating">★ 4.8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="لاتيه">
+              <span class="dish-badge" data-ar="جديد" data-en="New">جديد</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="لاتيه الفانيليا الكريمي" data-en="Creamy Vanilla Latte">لاتيه الفانيليا الكريمي</h3>
+              <p data-ar="إسبرسو مزدوج مع حليب مبخر وشراب الفانيليا الطبيعي"
+                 data-en="Double espresso with steamed milk and natural vanilla syrup">
+                إسبرسو مزدوج مع حليب مبخر وشراب الفانيليا الطبيعي
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$8</span>
+                <span class="dish-rating">★ 4.8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80" alt="شاي">
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="شاي الكرك الإماراتي" data-en="Emirati Karak Tea">شاي الكرك الإماراتي</h3>
+              <p data-ar="شاي هندي بالزنجبيل والهيل والقرفة والحليب والزعفران"
+                 data-en="Indian tea with ginger, cardamom, cinnamon and saffron">
+                شاي هندي بالزنجبيل والهيل والقرفة والحليب والزعفران
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$7</span>
+                <span class="dish-rating">★ 4.8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="ماتشا">
+              <span class="dish-badge" data-ar="تخصص الشيف" data-en="Chef's Special">تخصص الشيف</span>
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="لاتيه الماتشا الياباني" data-en="Japanese Matcha Latte">لاتيه الماتشا الياباني</h3>
+              <p data-ar="ماتشا ياباني درجة سيريموني مع حليب الشوفان والعسل"
+                 data-en="Ceremony grade Japanese matcha with oat milk and honey">
+                ماتشا ياباني درجة سيريموني مع حليب الشوفان والعسل
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$9</span>
+                <span class="dish-rating">★ 4.7</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?w=600&q=80" alt="شوكولاتة">
+            </div>
+            <div class="dish-body">
+              <h3 data-ar="شوكولاتة ساخنة بلجيكية" data-en="Belgian Hot Chocolate">شوكولاتة ساخنة بلجيكية</h3>
+              <p data-ar="شوكولاتة بلجيكية داكنة مع الحليب الكامل والكريمة"
+                 data-en="Belgian dark chocolate with full cream milk and cream">
+                شوكولاتة بلجيكية داكنة مع الحليب الكامل والكريمة
+              </p>
+              <div class="dish-footer">
+                <span class="dish-price">$8</span>
+                <span class="dish-rating">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========== RESERVATION ========== -->
+  <div id="reservation" class="hidden">
+    <div class="res-bg"></div>
+    <div class="res-overlay"></div>
+    <button class="back-btn" id="backFromReservation">
+      <span>→</span>
+      <span data-ar="رجوع" data-en="Back">رجوع</span>
+    </button>
+
+    <div class="res-container">
+      <div class="menu-header">
+        <p class="menu-label">✦ احجز مقعدك ✦</p>
+        <h2 class="menu-title" data-ar="حجز طاولة" data-en="Reserve a Table">حجز طاولة</h2>
+        <div class="gold-divider">
+          <span class="div-line"></span>
+          <span class="div-icon">♛</span>
+          <span class="div-line"></span>
+        </div>
+        <p class="menu-sub"
+           data-ar="اختر طاولتك المفضلة من المخطط"
+           data-en="Choose your preferred table from the layout">
+          اختر طاولتك المفضلة من المخطط
+        </p>
+      </div>
+
+      <div class="res-legend">
+        <div class="legend-item">
+          <span class="legend-dot available"></span>
+          <span data-ar="متاحة" data-en="Available">متاحة</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot booked"></span>
+          <span data-ar="محجوزة" data-en="Booked">محجوزة</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot selected"></span>
+          <span data-ar="مختارة" data-en="Selected">مختارة</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot vip"></span>
+          <span>VIP</span>
+        </div>
+      </div>
+
+      <div class="restaurant-map">
+
+        <!-- ثنائية -->
+        <div class="table-section">
+          <h4 class="section-label" data-ar="طاولات ثنائية" data-en="Couple Tables">طاولات ثنائية</h4>
+          <div class="tables-row">
+            <div class="table-item double" data-table="1"  data-type="double" data-status="available"><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">1</span><span class="chair bottom">🪑</span></div></div>
+            <div class="table-item double" data-table="2"  data-type="double" data-status="booked"   ><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">2</span><span class="chair bottom">🪑</span></div></div>
+            <div class="table-item double" data-table="3"  data-type="double" data-status="available"><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">3</span><span class="chair bottom">🪑</span></div></div>
+            <div class="table-item double" data-table="4"  data-type="double" data-status="available"><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">4</span><span class="chair bottom">🪑</span></div></div>
+            <div class="table-item double" data-table="5"  data-type="double" data-status="booked"   ><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">5</span><span class="chair bottom">🪑</span></div></div>
+            <div class="table-item double" data-table="6"  data-type="double" data-status="available"><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">6</span><span class="chair bottom">🪑</span></div></div>
+            <div class="table-item double" data-table="7"  data-type="double" data-status="available"><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">7</span><span class="chair bottom">🪑</span></div></div>
+            <div class="table-item double" data-table="8"  data-type="double" data-status="booked"   ><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">8</span><span class="chair bottom">🪑</span></div></div>
+            <div class="table-item double" data-table="9"  data-type="double" data-status="available"><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">9</span><span class="chair bottom">🪑</span></div></div>
+            <div class="table-item double" data-table="10" data-type="double" data-status="available"><div class="table-shape"><span class="chair top">🪑</span><span class="table-num">10</span><span class="chair bottom">🪑</span></div></div>
+          </div>
+        </div>
+
+        <!-- رباعية -->
+        <div class="table-section">
+          <h4 class="section-label" data-ar="طاولات رباعية" data-en="Four-Seat Tables">طاولات رباعية</h4>
+          <div class="tables-row">
+            <div class="table-item quad" data-table="11" data-type="quad" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">11</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item quad" data-table="12" data-type="quad" data-status="booked"   ><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">12</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item quad" data-table="13" data-type="quad" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">13</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item quad" data-table="14" data-type="quad" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">14</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item quad" data-table="15" data-type="quad" data-status="booked"   ><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">15</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item quad" data-table="16" data-type="quad" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">16</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item quad" data-table="17" data-type="quad" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">17</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item quad" data-table="18" data-type="quad" data-status="booked"   ><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">18</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item quad" data-table="19" data-type="quad" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">19</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item quad" data-table="20" data-type="quad" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">20</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+          </div>
+        </div>
+
+        <!-- عائلية -->
+        <div class="table-section">
+          <h4 class="section-label" data-ar="طاولات عائلية" data-en="Family Tables">طاولات عائلية</h4>
+          <div class="tables-row">
+            <div class="table-item family" data-table="21" data-type="family" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">21</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item family" data-table="22" data-type="family" data-status="booked"   ><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">22</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item family" data-table="23" data-type="family" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">23</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item family" data-table="24" data-type="family" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">24</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item family" data-table="25" data-type="family" data-status="booked"   ><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">25</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item family" data-table="26" data-type="family" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">26</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item family" data-table="27" data-type="family" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">27</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item family" data-table="28" data-type="family" data-status="booked"   ><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">28</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item family" data-table="29" data-type="family" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">29</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+            <div class="table-item family" data-table="30" data-type="family" data-status="available"><div class="table-shape"><div class="chairs-top"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div><span class="table-num">30</span><div class="chairs-bottom"><span class="chair">🪑</span><span class="chair">🪑</span><span class="chair">🪑</span></div></div></div>
+          </div>
+        </div>
+
+        <!-- VIP -->
+        <div class="table-section vip-section">
+          <h4 class="section-label vip-label">✦ VIP ✦</h4>
+          <div class="tables-row">
+            <div class="table-item vip" data-table="V1" data-type="vip" data-status="available"><div class="table-shape"><span class="table-num">V1</span><small data-ar="حسب الطلب" data-en="On Request">حسب الطلب</small></div></div>
+            <div class="table-item vip" data-table="V2" data-type="vip" data-status="booked"   ><div class="table-shape"><span class="table-num">V2</span><small data-ar="حسب الطلب" data-en="On Request">حسب الطلب</small></div></div>
+            <div class="table-item vip" data-table="V3" data-type="vip" data-status="available"><div class="table-shape"><span class="table-num">V3</span><small data-ar="حسب الطلب" data-en="On Request">حسب الطلب</small></div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- نموذج الحجز -->
+      <div class="selected-info" id="selectedInfo">
+        <div class="selected-content">
+          <p class="selected-title" data-ar="الطاولة المختارة" data-en="Selected Table">الطاولة المختارة</p>
+          <p class="selected-details" id="selectedDetails">-</p>
+          <div class="booking-form">
+            <input type="text" id="bookingName"
+              placeholder="اسمك الكريم"
+              data-ar-placeholder="اسمك الكريم"
+              data-en-placeholder="Your Name">
+            <input type="tel" id="bookingPhone"
+              placeholder="رقم هاتفك"
+              data-ar-placeholder="رقم هاتفك"
+              data-en-placeholder="Your Phone Number">
+            <input type="date" id="bookingDate">
+            <select id="bookingTime">
+              <option value="">اختر الوقت</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">01:00 PM</option>
+              <option value="14:00">02:00 PM</option>
+              <option value="18:00">06:00 PM</option>
+              <option value="19:00">07:00 PM</option>
+              <option value="20:00">08:00 PM</option>
+              <option value="21:00">09:00 PM</option>
+              <option value="22:00">10:00 PM</option>
+            </select>
+            <select id="bookingGuests">
+              <option value="">عدد الأشخاص</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7+">+7</option>
+            </select>
+          </div>
+          <button class="confirm-btn" id="confirmRes">
+            <span data-ar="تأكيد الحجز" data-en="Confirm Booking">تأكيد الحجز</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========== CONTACT ========== -->
+  <div id="contact" class="hidden">
+    <div class="contact-bg"></div>
+    <div class="contact-overlay"></div>
+    <button class="back-btn" id="backFromContact">
+      <span>→</span>
+      <span data-ar="رجوع" data-en="Back">رجوع</span>
+    </button>
+
+    <div class="contact-container">
+      <div class="menu-header">
+        <p class="menu-label">✦ نحن هنا لخدمتك ✦</p>
+        <h2 class="menu-title" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
+        <div class="gold-divider">
+          <span class="div-line"></span>
+          <span class="div-icon">♛</span>
+          <span class="div-line"></span>
+        </div>
+        <p class="menu-sub"
+           data-ar="يسعدنا الإجابة على استفساراتكم"
+           data-en="We're happy to answer your inquiries">
+          يسعدنا الإجابة على استفساراتكم
+        </p>
+      </div>
+
+      <div class="contact-info-grid">
+        <div class="contact-info-card">
+          <span class="info-icon">📞</span>
+          <h4 data-ar="هاتف المطعم" data-en="Restaurant Phone">هاتف المطعم</h4>
+          <p dir="ltr">+213 XX XXX XXXX</p>
+        </div>
+        <div class="contact-info-card">
+          <span class="info-icon">📍</span>
+          <h4 data-ar="العنوان" data-en="Address">العنوان</h4>
+          <p data-ar="شارع الاستقلال، الجزائر العاصمة" data-en="Independence Street, Algiers">شارع الاستقلال، الجزائر العاصمة</p>
+        </div>
+        <div class="contact-info-card">
+          <span class="info-icon">🕐</span>
+          <h4 data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</h4>
+          <p data-ar="يومياً من 12:00 إلى 23:00" data-en="Daily from 12:00 to 23:00">يومياً من 12:00 إلى 23:00</p>
+        </div>
+        <div class="contact-info-card">
+          <span class="info-icon">📧</span>
+          <h4 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
+          <p>altaj@restaurant.dz</p>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h3 class="form-title" data-ar="أرسل لنا رسالة" data-en="Send Us a Message">أرسل لنا رسالة</h3>
+        <div class="contact-form">
+          <div class="form-row">
+            <input type="text" id="contactName"
+              placeholder="اسمك الكريم"
+              data-ar-placeholder="اسمك الكريم"
+              data-en-placeholder="Your Name">
+            <input type="tel" id="contactPhone"
+              placeholder="رقم هاتفك"
+              data-ar-placeholder="رقم هاتفك"
+              data-en-placeholder="Your Phone">
+          </div>
+          <input type="email" id="contactEmail"
+            placeholder="بريدك الإلكتروني"
+            data-ar-placeholder="بريدك الإلكتروني"
+            data-en-placeholder="Your Email">
+          <textarea id="contactMsg" rows="4"
+            placeholder="رسالتك..."
+            data-ar-placeholder="رسالتك..."
+            data-en-placeholder="Your message..."></textarea>
+          <button class="confirm-btn" id="sendContact">
+            <span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="social-section">
+        <p class="social-title" data-ar="تابعنا على" data-en="Follow Us On">تابعنا على</p>
+        <div class="social-links">
+          <a href="#" class="social-link facebook">
+            <span class="social-icon">f</span>
+            <span>Facebook</span>
+          </a>
+          <a href="#" class="social-link instagram">
+            <span class="social-icon">📷</span>
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="social-link twitter">
+            <span class="social-icon">𝕏</span>
+            <span>Twitter</span>
+          </a>
+          <a href="#" class="social-link whatsapp">
+            <span class="social-icon">💬</span>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
